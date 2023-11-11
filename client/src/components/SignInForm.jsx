@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Await } from 'react-router-dom';
 
-const SingUpForm = () => {
+const SingIn = () => {
     // Input border style 
     const inputBorderStyle = {
         background: 'transparent',
         border:'none',
         borderBottom: '1px solid #CDCDCD84',
-        placeholder : '#CDCDCD84',
-        color:'white'
+        placeholder : '#CDCDCD84'
     }
     // Form div style 
     const FormDivStyle = {
@@ -56,12 +55,9 @@ const SingUpForm = () => {
 
   const [formData, setFormData] = useState({
     username: '',
-    email:'',
-    phonenumber:'',
     password: '',
-    password2:''
   });
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -69,67 +65,41 @@ const SingUpForm = () => {
       [name]: value,
     });
   };
-
   
   const [error, setError] = useState('');
-  const [isPasswordValid, setIsPasswordValid] = useState(true);
-  const [isPhoneNumberValid, setIsPhoneNumberValid] = useState(true);
-  const [isEmailValid, setIsEmailValid] = useState(true);
+  // const [isEmailValid, setIsEmailValid] = useState(true);
   const [isNameValid, setIsNameValid] = useState(true);
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-          // Password validation
-          const validatePassword = (password) => {
-            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,20}$/;
-            return passwordRegex.test(password);
-          };
-          // Email Validation 
-          const validateEmail = (email) => {
-          const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-          return emailRegex.test(email);
-          };
-          const isValid = validateEmail(formData.email);
-          setIsEmailValid(isValid);
-          // UserName Validation 
-          const validateUserName = (username) => {
-          const nameRegex = /^[a-zA-Z0-9]{3,6}$/;
-          return nameRegex.test(username);
-          };
-          const nameIsValid = validateUserName(formData.username);
-          setIsNameValid(nameIsValid);
-      
-          const isPasswordValid = validatePassword(formData.password);
-          if (!isPasswordValid) {
-            setIsPasswordValid(false);
-    
-          // UserName Validation 
-          const validateUserName = (username) => {
-          const nameRegex = /^[a-zA-Z0-9]{3,6}$/;
-          return nameRegex.test(username);
-          };
-          const nameIsValid = validateUserName(formData.username);
-          setIsNameValid(nameIsValid);
-          
-    
-          // Password validation
-          const validatePassword = (password) => {
-          const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,20}$/;
-          return passwordRegex.test(password);
-          };
-          const validPassword = validatePassword(formData.password);
-          setIsPasswordValid(validPassword);
+    // // Email Validation 
+    // const validateEmail = (email) => {
+    //   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    //   return emailRegex.test(email);
+    //   };
+    //   const isValid = validateEmail(formData.email);
+    //   setIsEmailValid(isValid);
 
-          // Phonenumber validation
-          const validatePhoneNumber = (phonenumber) => {
-            const phoneNumberRegex = /^(?:(?:\+|00)962|0)?7[789]\d{8}$/;
-            return phoneNumberRegex.test(phonenumber);
-          };
-          const validPhoneNumber = validatePhoneNumber(formData.phonenumber);
-          setIsPhoneNumberValid(validPhoneNumber);
-        }
-  
-  
+
+      // UserName Validation 
+      const validateUserName = (username) => {
+      const nameRegex = /^[a-zA-Z0-9]{3,6}$/;
+      return nameRegex.test(username);
+      };
+      const nameIsValid = validateUserName(formData.username);
+      setIsNameValid(nameIsValid);
+      
+
+      // Password validation
+      const validatePassword = (password) => {
+      const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,20}$/;
+      return passwordRegex.test(password);
+      };
+      const validPassword = validatePassword(formData.password);
+      setIsPasswordValid(validPassword);
+
+      
 
     // Send the form data to the server for authentication
     axios.post('/api/login', formData)
@@ -141,12 +111,13 @@ const SingUpForm = () => {
       });
   };
 
+  
 
 
   return (
     <div style={FormDivStyle}>
     <div className='p-8 grid grid-col-3 justify-items-stretch  bg-[#373737] rounded-[2rem] w-[45rem] ' >
-            <div className="col-span-3 justify-self-center text-[2.25rem] font-extralight pb-16 pt-4 text-[#fff]">SIGN UP</div>
+            <div className="col-span-3 justify-self-center text-[2.25rem] font-extralight pb-16 pt-4 text-[#fff]">SIGN IN</div>
             <form onSubmit={handleSubmit} style={FormStyle} >
             <div className='col-span-1 place-items-center flex-center'>
                 <label></label>
@@ -156,79 +127,39 @@ const SingUpForm = () => {
                 style={inputBorderStyle}
                 value={formData.username}
                 onChange={handleChange}
-                placeholder='Full Name'
+                placeholder='Username'
                 className='placeholder-[#CDCDCD84] mb-4 font-light'
                 />
             </div>
             {!isNameValid && (
-            <p style={erroMessage}>Username should be 3-6 characters without any special characters</p>
+            <p style={erroMessage}>Please enter a valid user name</p>
             )}
-            
-            <label></label>
-            <input
-              type="email"
-              name="email"
-              style={inputBorderStyle}
-              placeholder='Email'
-              className='placeholder-[#CDCDCD84] mb-4 font-light'
-              value={formData.email}
-              onChange={handleChange}
-            />
-            {!isEmailValid && (
-            <span style={erroMessage}>please enter a valid email address </span>
-            )} 
-            <label></label>
-            <input
-              type="integer"
-              name="phonenumber"
-              style={inputBorderStyle}
-              placeholder='Phone Number'
-              className='placeholder-[#CDCDCD84] mb-4 font-light'
-              value={formData.phonenumber}
-              onChange={handleChange}
-            />
-            {!isPhoneNumberValid && (
-            <span style={erroMessage}>please enter a valid phonenumber i.e. +962 7 0000 0000 </span>
-            )} 
-
-            <label></label>
-            <input
-            type="password"
-            name="password"
-            style={inputBorderStyle}
-            placeholder='Password'
-            value={formData.password}
-            onChange={handleChange}
-            className='placeholder-[#CDCDCD84] mb-4 font-light'
-            />
+            <div>
+                <label></label>
+                <input
+                type="password"
+                name="password"
+                style={inputBorderStyle}
+                placeholder='Password'
+                value={formData.password}
+                onChange={handleChange}
+                className='placeholder-[#CDCDCD84] font-light'
+                />
+            </div>
             {!isPasswordValid && (
-            <p style={erroMessage}>Password should be 8-20 characters with at least 1 letter, 1 number and 1 special character</p>
+            <p style={erroMessage}>Please enter a valid password</p>
             )}
-
-            <label></label>
-            <input
-            type="password2"
-            name="password2"
-            style={inputBorderStyle}
-            placeholder='Confirm Password'
-            value={formData.password2}
-            onChange={handleChange}
-            className='placeholder-[#CDCDCD84] mb-4 font-light'
-            />
-            {formData.password !== formData.password2 && (
-            <p style={erroMessage}>Passwords don't match</p>
-            )}
-            <button type="submit"className=" px-3 pb-2 text-[#fff] bg-transparent border border-1 border-[#fff] font-light focus:outline-none hover:bg-[#ffffff] hover:text-[#373737] text-xs  rounded-lg text-xs px-5 py-2 mt-8 mb-8 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">SIGN UP</button>
+            <button type="submit"className=" px-3 pb-2 text-[#fff] bg-transparent border border-1 border-[#fff] font-light focus:outline-none hover:bg-[#ffffff] hover:text-[#373737] text-xs  rounded-lg text-xs px-5 py-2 mt-16 mb-8 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">SIGN IN</button>
             {error && <div style={invalidCredintials}>{error}</div>}
         </form>  
         
         <div className="col-span-1 flex flex-col items-center ">
-                <div className="border-r border-[#ffffff85] h-40 mr-1"></div>
+                <div className="border-r border-[#ffffff85] h-16 mr-1"></div>
                 <span className="text-white font-thin">or</span>
-                <div className="border-r border-[#ffffff85] h-40 mr-1"></div>
+                <div className="border-r border-[#ffffff85] h-16 mr-1"></div>
         </div>
 
-        <div className='col-span-1 place-items-center pt-[9.5rem] pl-4'> 
+        <div className='col-span-1 place-items-center pt-14 pl-4'> 
             
             {/* <div className='align-self-end mt-15'> */}
             <button type="submit" className="place-content-center h-10 flex flex-row gap-8  text-[#fff] bg-transparent border border-[0.005rem] border-[#ffffff95] font-light focus:outline-none hover:bg-[#ffffff] hover:text-[#373737] text-xs  rounded-lg text-xs px-5 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" >
@@ -240,11 +171,11 @@ const SingUpForm = () => {
             </button>
             {/* </div> */}
         </div>
-        <div className='col-span-3 text-[0.75rem] mb-1 mt-8 justify-self-center place-items-center text-[#CDCDCD]'>Already have an account ? <Link to='/signin' className='hover:text-[#ffffff95]  underline decoration-solid'>Sing In</Link></div>
+        <div className='col-span-3 text-[0.75rem] mb-1 justify-self-center place-items-center text-[#CDCDCD]'>Don't have an account ? <Link to='/signup' className='hover:text-[#ffffff95]  underline decoration-solid'>Sing Up</Link></div>
 
     </div>
     </div>
   );
 };
 
-export default SingUpForm;
+export default SingIn;
