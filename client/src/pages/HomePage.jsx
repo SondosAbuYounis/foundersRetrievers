@@ -7,6 +7,7 @@ import HowItWorksStatic from '../assets/clips/HowItWorksStatic.png'
 import { BeTheLink } from '../components/BeTheLink'
 import { CaseStory } from '../components/CaseStory'
 import { CardRetrievedHome } from '../components/CardRetrievedHome'
+import {PublishLost } from '../components/PublishLost'
 
 export const HomePage = () => {
 
@@ -50,6 +51,7 @@ export const HomePage = () => {
           <CaseStory />
         </div>
 
+      <PublishLost />
 
     </div>
   )

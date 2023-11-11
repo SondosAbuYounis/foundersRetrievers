@@ -58,8 +58,9 @@ const SingUpForm = () => {
     username: '',
     email:'',
     phonenumber:'',
+    country:'',
+    city:'',
     password: '',
-    password2:''
   });
   
   const handleChange = (e) => {
@@ -69,6 +70,8 @@ const SingUpForm = () => {
       [name]: value,
     });
   };
+
+ 
 
   
   const [error, setError] = useState('');
@@ -190,6 +193,18 @@ const SingUpForm = () => {
             {!isPhoneNumberValid && (
             <span style={erroMessage}>please enter a valid phonenumber i.e. +962 7 0000 0000 </span>
             )} 
+            <label className='text-start font-light mb-1 text-[#CDCDCD84]'>Where do you live!</label>
+            <label htmlFor="" className='flex flex-row gap-4'>
+                <select name="" id="" className='w-24 mb-4'  required  onChange={handleChange}>
+                    <option value={formData.country}>Country</option>
+                    <option value={formData.country}>Jordan</option>
+                </select>
+                <select name="" id="" className='w-24 mb-4'  required onChange={handleChange}>
+                    <option value={formData.city}>City</option>
+                    <option value={formData.city}>Amman</option>
+                    <option value={formData.city}>Zarqaa</option>
+                </select>
+            </label>
 
             <label></label>
             <input

@@ -1,26 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'react-axios'
 import { Link } from 'react-router-dom'
-import { Plus } from '../assets/icons/IconsSVGConst'
+import { MinusRed, Plus, PlusYellow } from '../assets/icons/IconsSVGConst'
 import { LinkIcon } from '../assets/icons/IconsSVGConst'
 
 export const PublishLost = () => {
-    // plus/minus icon style 
-    const plusStyle = {
-        stroke : '#fff',
-        '&:hover': {
-            stroke: '#FBE62E',
-          },
-    }
-    const minusStyle = {
-        stroke : '#fff',
-        '&:hover': {
-            stroke: '#E83434',
-          },
-    }
+
 
     // Functionality
     const [formData, setFormData] = useState({
+        type: 'lost',
         blog_title: '',
         blog_description:'',
         the_user: '',
@@ -52,31 +41,16 @@ export const PublishLost = () => {
     <>
     <div className='p-12 bg-[#373737] rounded-[1rem] w-[50rem] h-[45rem] ' >
         <form onSubmit={handleSubmit} className="flex flex-col align-start justify-start gap-4 ">
-            <label htmlFor="">
-                <input type="checkbox" id='option1' checked={''} onChange={''} className='relative inline-block' />
-                <span className="absolute w-32 flex flex-row inline-block gap-x-2 px-[0.75rem] pb-2 hover:text-[#FBE62E] bg-none border border-2 hover:border-[#FBE62E]  focus:outline-none text-[#FFFFFF] text-[0.7rem] font-semibold rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 9H17" style={plusStyle} strokeWidth="2" strokeLinecap="round"/>
-                        <path d="M9 17L9 1" style={plusStyle} strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                    I’VE FOUND
-                </span>
+            <label className="w-32 mb-8 flex flex-row align-center inline-block gap-x-2 px-[1rem] pb-2 text-[#E83434] bg-none border border-2 border-[#E83434] text-[0.7rem] font-semibold rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                <MinusRed />
+                I’VE LOST
             </label>
-            {/* <label htmlFor="">
-                <input type="checkbox" id='option2' checked={''} onChange={''} />
-                <label className="w-32 flex flex-row align-center inline-block gap-x-2 px-[1rem] pb-2 hover:text-[#E83434] bg-none border border-2 hover:border-[#E83434] text-[#FFFFFF] text-[0.7rem] font-semibold rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                    <svg className='self-center' width="18" height="2" viewBox="0 0 18 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1H17" style={minusStyle} strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                    I’VE LOST
-                </label>
-            </label> */}
-            <br /> <br /> <br />
             <label className='self-start text-[0.85rem] mb-1 justify-self-center place-items-center text-[#CDCDCD]'>Please fill the following information regarding the belonging you found </label>
             
             <label className='self-start text-[0.85rem] mb-1 justify-self-center place-items-center text-[#CDCDCD55]'>Under what category does it fall !</label>
             {/* map categories */}
-            <select name="" id="">
+            <select name="" id="" className='w-24'>
+                <option value="">category</option>
                 <option value="">Animal</option>
                 <option value="">Electronic</option>
                 <option value="">Bags</option>
