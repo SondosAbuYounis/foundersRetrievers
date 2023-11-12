@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 import { MinusRed, Plus, PlusYellow } from '../assets/icons/IconsSVGConst'
 import { LinkIcon } from '../assets/icons/IconsSVGConst'
 
-export const PublishLost = () => {
+export const PublishFound = () => {
 
     // Sending form data
     const [formData, setFormData] = useState({
-        type: 'lost',
+        type: 'Found',
         category: '',
         country:'',
         city: '',
@@ -25,7 +25,7 @@ export const PublishLost = () => {
         });
       };
      
-      // Get Lost items data
+      // Get categories data
       const [error, setError] = useState(''); 
       const [categories, setCategoriesData ] = useState([]);
       useEffect (() => {
@@ -56,11 +56,11 @@ export const PublishLost = () => {
     <>
     <div className='p-12 bg-[#373737] rounded-[1rem] w-[50rem] h-[45rem] ' >
         <form onSubmit={handleSubmit} className="flex flex-col align-start justify-start gap-4 ">
-            <label className="w-32 mb-8 flex flex-row align-center inline-block gap-x-2 px-[1rem] pb-2 text-[#E83434] bg-none border border-2 border-[#E83434] text-[0.7rem] font-semibold rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                <MinusRed />
-                I’VE LOST
-            </label>
-            <label className='self-start text-[0.85rem] mb-1 justify-self-center place-items-center text-[#CDCDCD]'>Please fill the following information regarding the belonging you Lost </label>
+            <span className="absolute w-32 flex flex-row inline-block gap-x-2 px-[0.75rem] pb-2 hover:text-[#FBE62E] bg-none border border-2 hover:border-[#FBE62E]  focus:outline-none text-[#FFFFFF] text-[0.7rem] font-semibold rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                <PlusYellow /> I’VE FOUND
+            </span>
+
+            <label className='self-start text-[0.85rem] mb-1 justify-self-center place-items-center text-[#CDCDCD]'>Please fill the following information regarding the belonging you found </label>
             
             <label className='self-start text-[0.85rem] mb-1 justify-self-center place-items-center text-[#CDCDCD55]'>Under what category does it fall !</label>
 
