@@ -106,6 +106,25 @@ export const Edit = () => {
   )
 }
 
+export const Backtotop = () => {
+  return (
+    <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.99976 5.90918L8.99976 20.4546" stroke="#D9D9D9" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M1.07308 7.8603L8.2943 1.17545C8.71657 0.784541 9.41386 0.797866 9.81769 1.20456L16.4269 7.86065" stroke="#D9D9D9" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+export const BurgurList = () => {
+  return (
+    <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1H26.02" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M5 7L26 7" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M1 12H26.02" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
 export const PlusYellow = () => {
   const plusStyle = {
       stroke : '#fff',

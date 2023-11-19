@@ -4,15 +4,16 @@ import { CardHomeLost } from './uiPrimitives/CardHomeLost'
 import { Comment } from '../components/uiPrimitives/Comment'
 import { FoundItBtn } from './uiPrimitives/FoundItBtn'
 import { LinkIcon } from '../assets/icons/IconsSVGConst'
+import { StaticCardHomeLost } from './uiPrimitives/StaticCardHomeLost'
 
 
 
 export const BeTheLink = () => {
   return (
     <>
-    <div className='grid grid-col-2 gap-2'>
-        <div className='flex flex-col align-center'>
-            <div className='col-span-1 w-[20rem] bg-[#86868637] p-4 rounded-[0.75rem]'>
+    <div className='grid grid-col-2 gap-2 '>
+        <div className='col-span-1 row-span-1 items-start justify-self-center flex flex-col align-center'>
+            <div className='w-[20rem] bg-[#86868637] p-4 rounded-[0.75rem]'>
             <Comment />
             </div>
             <span className="flex flex-row inline-block gap-x-2 px-[0.75rem] pb-2 text-[#18E074] bg-none  text-[0.7rem] font-semibold text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 w-[7rem]"><LinkIcon />  RETRIEVED </span>
@@ -23,27 +24,26 @@ export const BeTheLink = () => {
             <Link to="/signup" className="w-24 px-3 pb-2 text-[#E83434] bg-transparent border border-2 border-[#E83434]  focus:outline-none hover:bg-[#E83434] hover:text-[#FFFFFF] text-xs font-semibold rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">SIGN UP</Link>
             
         </div>
-        <div className='col-span-1 justify-self-end'>
-            <div className='relative z-[200]'> 
+        <div className='col-span-2 justify-self-end'>
+            <div className='relative  '> 
+
+                 <div className='absolute top-[6rem]  right-[16rem] bg-[#86868690] w-[18rem] h-40 p-4 pb-4 rounded-[1.25rem]'>
+                    <div className='bg-[#373737] -z-[60] h-32 pt-12 p-6 pb-4 rounded-[1rem]'>
+                        <button className=" w-32 h-12 text-[#E83434] bg-transparent border border-2 border-[#E83434]  focus:outline-none hover:bg-[#E83434] hover:text-[#FFFFFF] text-[1rem] font-[0.8rem] rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">FOUND IT</button>
+                    </div>
+                </div>
+                
                 <div className='relative bg-[#86868650] w-[22rem] m-4 p-[2rem] rounded-[1.25rem]'>
-                    <CardHomeLost />
+                    <StaticCardHomeLost />
                 </div>
-                <div className='absolute top-[6rem] -z-50 right-[16rem] bg-[#86868690] w-[18rem] h-40 p-4 pb-4 rounded-[1.25rem]'>
-                    <div className='bg-[#373737] -z-[60] h-32 pt-12 p-6 pb-4 rounded-[1rem]'>
-                        <button className=" w-32 h-12 text-[#E83434] bg-transparent border border-2 border-[#E83434]  focus:outline-none hover:bg-[#E83434] hover:text-[#FFFFFF] text-[1rem] font-[0.8rem] rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">FOUND IT</button>
-                    </div>
-                </div>
-                <div className='absolute top-[6rem] -z-50 right-[16rem] bg-[#86868690] w-[18rem] h-40 p-4 pb-4 rounded-[1.25rem]'>
-                    <div className='bg-[#373737] -z-[60] h-32 pt-12 p-6 pb-4 rounded-[1rem]'>
-                        <button className=" w-32 h-12 text-[#E83434] bg-transparent border border-2 border-[#E83434]  focus:outline-none hover:bg-[#E83434] hover:text-[#FFFFFF] text-[1rem] font-[0.8rem] rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">FOUND IT</button>
-                    </div>
-                </div>
-                <div className='absolute -top-[3rem] z-50 -right-[5rem] bg-[#86868690] w-[18rem] h-40 p-4 pb-4 rounded-[1.25rem]'>
-                    <div className='bg-[#373737] -z-[60] h-32 pt-12 p-6 pb-4 rounded-[1rem]'>
+                
+              
+                <div className='absolute -top-[4rem] right-[0rem] bg-[#86868690] w-[15rem] h-40 p-4 pb-4 rounded-l-[1.25rem]'>
+                    <div className='bg-[#373737]   h-32 pt-12 p-6 pb-4 rounded-[1rem]'>
                         <button className=" w-32 h-12 text-[#FBE62E] bg-transparent border border-2 border-[#FBE62E]  focus:outline-none hover:bg-[#FBE62E] hover:text-[#FFFFFF] text-[1rem] font-[0.8rem] rounded-[0.65rem] text-xs px-5 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">FOUND IT</button>
                     </div>
                 </div>
-                <div className='absolute top-[24rem] right-[14rem] z-50 col-span-1 w-[20rem] bg-[#86868637] p-4 rounded-[0.75rem]'>
+                <div className='absolute top-[24rem] right-[14rem] col-span-1 w-[20rem] bg-[#86868637] p-4 rounded-[0.75rem]'>
                     <Comment />
                 </div>
                 

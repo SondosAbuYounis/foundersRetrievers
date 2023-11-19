@@ -193,13 +193,14 @@ const SingUpForm = () => {
             {!isPhoneNumberValid && (
             <span style={erroMessage}>please enter a valid phonenumber i.e. +962 7 0000 0000 </span>
             )} 
-            <label className='text-start font-light mb-1 text-[#CDCDCD84]'>Where do you live!</label>
-            <label htmlFor="" className='flex flex-row gap-4'>
-                <select name="" id="" className='w-24 mb-4'  required  onChange={handleChange}>
+            <label className='justify-self-start -ml-20	font-light mb-1 text-[#CDCDCD84]'>Where do you live!</label>
+            <label htmlFor="" className='flex flex-row gap-4 '>
+                <select name="" id="" className='w-24 mb-4  bg-transparent text-[#CDCDCD95]  '  required  onChange={handleChange}>
                     <option value={formData.country}>Country</option>
                     <option value={formData.country}>Jordan</option>
                 </select>
-                <select name="" id="" className='w-24 mb-4'  required onChange={handleChange}>
+  
+                <select name="" id="" className='w-24 mb-4 bg-transparent text-[#CDCDCD95]'  required onChange={handleChange}>
                     <option value={formData.city}>City</option>
                     <option value={formData.city}>Amman</option>
                     <option value={formData.city}>Zarqaa</option>
@@ -255,6 +256,8 @@ const SingUpForm = () => {
             </button>
             {/* </div> */}
         </div>
+        <input type="checkbox" required ></input>
+        <label htmlFor=""className='col-span-3 text-[0.75rem] mb-1 mt-8 justify-self-center place-items-center text-[#CDCDCD]'>By signing up, you agree to our Terms of Use and acknowledge you’ve read our Privacy Policy. </label>
         <div className='col-span-3 text-[0.75rem] mb-1 mt-8 justify-self-center place-items-center text-[#CDCDCD]'>Already have an account ? <Link to='/signin' className='hover:text-[#ffffff95]  underline decoration-solid'>Sing In</Link></div>
 
     </div>

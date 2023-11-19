@@ -13,6 +13,10 @@ import { Footer } from './components/Footer';
 
 import Paper from '../src/Paper.png'
 import { HomePage } from './pages/HomePage';
+import { FixedFooter } from './components/FixedFooter';
+import { ModalProvider } from './hooks/useContext/ModalContext';
+
+
 
 function App() {
     // Background style 
@@ -24,17 +28,20 @@ function App() {
   return (
     <div style={BgTexture}>
     <BrowserRouter>
-    <Navbar/>
-      <Routes>
-        <Route path='/' element={<HomePage/>} />
-        <Route path='/signup' element={<SignUp/>}/>
-        <Route path='/signin' element={<SignIn/>}/>
-        <Route path='/profilepage' element={<ProfilePage/>}/>
-        <Route path='/feedpage' element={<FeedPage/>}/>
-        <Route path='/aboutus' element={<AboutUs/>}/>
-        <Route path='/contactus' element={<ContactUs/>}/>
-      </Routes>
-    <Footer />
+      <ModalProvider>
+      <Navbar/>
+        <Routes>
+          <Route path='/' element={<HomePage/>} />
+          <Route path='/signup' element={<SignUp/>}/>
+          <Route path='/signin' element={<SignIn/>}/>
+          <Route path='/profilepage' element={<ProfilePage/>}/>
+          <Route path='/feedpage' element={<FeedPage/>}/>
+          <Route path='/aboutus' element={<AboutUs/>}/>
+          <Route path='/contactus' element={<ContactUs/>}/>
+        </Routes>
+        <FixedFooter />
+      <Footer />
+      </ModalProvider>
     </BrowserRouter>
     </div>
   );
