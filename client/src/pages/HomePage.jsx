@@ -16,6 +16,7 @@ import NewsTicker from '../components/swipers/TryNewsTicker'
 import Payment from '../components/Payment'
 
 export const HomePage = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <div >
@@ -46,19 +47,16 @@ export const HomePage = () => {
 
         <hr className="my-6 border-[#868686] border-dashed  sm:mx-auto dark:border-gray-700 lg:my-8" />
         
-        <div className='p-4 grid auto-rows-auto	 justify-items-center gap-8	mb-12'>
-          <div className='place-items-center text-2xl font-semibold'>Recently Linked </div>
-          <div className='flex flex-row gap-8 p-12'>
+        <div className=''>
+          <div className='place-items-center text-2xl font-semibold text-center pb-12 pt-12'>Recently Linked </div>
             <CardRetrievedHome />
-            <CardRetrievedHome />
-          </div>
-          <div className='text-[0.85rem]'><Link to='/signup' className='text-[#E83434] hover:text-[#E8343485] justify-self-center place-items-center font-light underline decoration-solid ' >Sign Up/In  </Link>now. Be the Link !</div>
+          <div className='text-[0.85rem] text-center pb-12 pt-12'><Link to='/signup' className='text-[#E83434] hover:text-[#E8343485] justify-self-center place-items-center font-light underline decoration-solid ' >Sign Up/In  </Link>now. Be the Link !</div>
         </div>
 
-        <div className='flex flex-col place-items-center align-items-center gap-8 mb-12'>
-          <div className='text-2xl font-semibold'> Case Story</div>
+        {/* <div className='flex flex-col place-items-center align-items-center gap-8 mb-12'> */}
+          <div className='text-2xl font-semibold text-center pb-16'> Case Story</div>
           <CaseStory />
-        </div>
+        {/* </div> */}
 
       {/* <div className='ml-24'>
         <PublishLost />

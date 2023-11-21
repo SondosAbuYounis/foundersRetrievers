@@ -3,6 +3,7 @@ import { Edit } from '../assets/icons/IconsSVGConst'
 import { MainCardFound } from '../components/MainCardFound'
 
 export const ProfilePage = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   return (
     <div className='flex flex-row justify-between mt-12 mb-12'>
       {/* Side bar */}

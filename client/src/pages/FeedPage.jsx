@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { MainCardLost } from '../components/MainCardLost'
 
 export const FeedPage = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   return (
     <>
     <div className='flex flex-col justify-center items-center justify-items-center	'>

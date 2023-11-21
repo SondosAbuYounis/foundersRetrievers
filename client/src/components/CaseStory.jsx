@@ -22,7 +22,7 @@
 // }
 
 
-/////////////<< CARDS WITH SWIPER >>///////////////////
+/////////////<< Testimonials WITH SWIPER >>///////////////////
 
 import React from 'react';
 import { useState, useEffect } from 'react';
@@ -31,10 +31,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
-import { Minus, Plus } from '../assets/icons/IconsSVGConst'
-import { FoundItBtn } from '../assets/icons/IconsSVGConst';
-import { NotSignedIn } from '../components/uiPrimitives/NotSignedIn';
-import { MineBtn } from '../components/uiPrimitives/NotSignedIn';
 // import SwiperCore, { Autoplay } from 'swiper/core';
 
 // Import Swiper styles
@@ -47,9 +43,9 @@ import 'swiper/css/free-mode';
 
 export const CaseStory = () => {
   const [dataFromFirstAPI, setDataFromFirstAPI] = useState([]);
-  const [dataFromSecondAPI, setDataFromSecondAPI] = useState([]);
 
   useEffect(() => {
+    
     // GET data from LOSTS
     axios.get('http://localhost:3000/users')
       .then(response => {
@@ -59,27 +55,8 @@ export const CaseStory = () => {
         console.error('Error fetching data from the first API:', error);
       });
 
-//     // GET data from FOUNDS
-//     axios.get('http://localhost:3000/Founds')
-//       .then(response => {
-//         setDataFromSecondAPI(response.data);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching data from the second API:', error);
-//       });
   }, []);
 
-//   const combinedData = [];
-
-//   for (let i = 0; i < Math.max(dataFromFirstAPI.length, dataFromSecondAPI.length); i++) {
-//     if (dataFromFirstAPI[i]) {
-//       combinedData.push({ type: 'losts', data: dataFromFirstAPI[i] });
-//     }
-
-//     if (dataFromSecondAPI[i]) {
-//       combinedData.push({ type: 'found', data: dataFromSecondAPI[i] });
-//     }
-//   }
 
   const swiperParams = {
     autoplay: {
@@ -101,7 +78,7 @@ export const CaseStory = () => {
     },
     slidesOffsetBefore: 10,
     slidesOffsetAfter: 10,
-    spaceBetween: -50,
+    spaceBetween: 0,
     freeMode: true,
     navigation: false,
     loop: true,
@@ -109,20 +86,20 @@ export const CaseStory = () => {
   };
 
   return (
-    <div className='max-w-screen-2xl m-0 overflow-hidden relative'>
+    <div className='max-w-screen-2xl m-0 overflow-hidden relative pb-24'>
 
       <Swiper {...swiperParams}>
         {dataFromFirstAPI.map((item, user_id) => (
           <SwiperSlide key={item.user_id}>
-            <div className='flex flex-row justify-items-center gap-8'>
-            <div className='flex flex-row gap-6 '>
-                <img src="" alt="userpic" className='bg-[#000] row-span-2 w-10 h-10 rounded-full'/>
-                <div className='flex flex-col'>
-                    <span className='text-[#000] font-light text-[0.9rem]'>{item.username}</span>
-                    <span className='text-[#00000085] font-light text-[0.75rem]' >{item.description}</span> 
-                </div>     
-            </div>
-         </div>
+            <div className='flex flex-row justify-items-center '>
+              <div className='flex flex-row gap-6  bg-[#86868650] p-4 rounded-[0.5rem] hover:scale-105'>
+                  <img src="" alt="userpic" className='bg-[#000] row-span-2 w-10 h-10 rounded-full'/>
+                  <div className='flex flex-col'>
+                      <span className='text-[#000] font-light text-[0.9rem]'>{item.username}</span>
+                      <span className='text-[#00000095] font-light text-[0.75rem]  max-h-4 h-8 hover:h-12 max-w-8 w-48 overflow-hidden hover:overflow-visible ' >{item.description}</span> 
+                  </div>     
+              </div>
+          </div>
           </SwiperSlide>
         ))}
       </Swiper>

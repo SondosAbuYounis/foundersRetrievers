@@ -4,6 +4,7 @@ import BgBlur from '../assets/clips/BgBlur.png'
 
 
 export const SignIn = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
    // Background style 
    const BgBLUR = {
     backgroundImage: `url(${BgBlur})`,

@@ -404,7 +404,7 @@ export const AutoplaySwiper = () => {
     },
     slidesOffsetBefore: 10,
     slidesOffsetAfter: 10,
-    spaceBetween: -50,
+    spaceBetween: 0,
     freeMode: true,
     navigation: false,
     loop: true,

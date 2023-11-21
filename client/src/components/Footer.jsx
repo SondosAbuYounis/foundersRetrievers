@@ -13,7 +13,7 @@ export const Footer = () => {
                     <Link to='/'  className="text-[0.8rem] font-bold  mr-4 hover:underline md:mr-6 ">HOME</Link>
                 </li>
                 <li>
-                    <Link to='/' className="text-[0.8rem] font-bold  mr-4 hover:underline md:mr-6">ABOUT US</Link>
+                    <Link to='/aboutus' className="text-[0.8rem] font-bold  mr-4 hover:underline md:mr-6">ABOUT US</Link>
                 </li>
                 <li>
                     <Link to='/' className="text-[0.8rem] font-bold  mr-4 hover:underline md:mr-6">BELONGINGS</Link>
