@@ -10,8 +10,10 @@ import { CardRetrievedHome } from '../components/CardRetrievedHome'
 import {PublishLost } from '../components/PublishLost'
 import { PublishFound } from '../components/PublishFound'
 import { DeliveryAlertFound } from '../components/uiPrimitives/DeliveryAlertFound'
-import AutoplaySwiper from '../components/swipers/MainSwiper'
 import TrySwiper from '../service/TrySwiper'
+import { AutoplaySwiper } from '../components/swipers/MainSwiper'
+import NewsTicker from '../components/swipers/TryNewsTicker'
+import Payment from '../components/Payment'
 
 export const HomePage = () => {
 
@@ -23,10 +25,11 @@ export const HomePage = () => {
         <div className='p-4 grid auto-rows-auto	 justify-items-center gap-8	'>
             <div className='place-items-center text-2xl font-semibold'>Recently Lost and Found </div>
             <div className='p-4 flex flex-row gap-8'>
-            <CardHomeFound />
-            <CardHomeLost />
-            {/* <AutoplaySwiper /> */}
+            {/* <CardHomeFound /> */}
+            {/* <CardHomeLost /> */}
+            <AutoplaySwiper />
             {/* <TrySwiper /> */}
+            {/* <NewsTicker /> */}
             </div>
             <div className='text-[0.85rem]'><Link to='/signup' className='text-[#E83434] hover:text-[#E8343485] justify-self-center place-items-center font-light underline decoration-solid ' >Sign Up/ In now.</Link> Be the Link !</div>
         </div>
@@ -57,14 +60,16 @@ export const HomePage = () => {
           <CaseStory />
         </div>
 
-      <div className='ml-24'>
+      {/* <div className='ml-24'>
         <PublishLost />
         <br />
         <PublishFound />
         <br />
         <DeliveryAlertFound />
       </div>
-      
+       */}
+
+       <Payment />
     </div>
   )
 }

@@ -6,10 +6,18 @@ Modal.setAppElement(document.getElementById('root'));
 
 
 export const NotSignedIn = ({ isOpen, onRequestClose, children }) => {
+  const modalStyle = {
+    overlay: {
+      backgroundColor: '#ffffff10', // Set the overlay background color with transparency
+      zIndex: 5, // Set the z-index for the overlay
+    },
+   
+  };
   return (
     <>  
     <Modal className='absolute top-44 left-[30rem] flex flex-col align-center justify-center gap-8 p-12 bg-[#373737] rounded-[1rem] w-[34rem] h-[24rem] ' 
       isOpen={isOpen}
+      style={modalStyle}
       onRequestClose={onRequestClose}
       contentLabel="Not signed in Modal" >
         

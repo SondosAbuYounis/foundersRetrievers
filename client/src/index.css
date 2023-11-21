@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'swiper/swiper-bundle.css';
+
 
 body {
   margin: 0;
@@ -15,3 +17,4 @@ body {
   /* Font weight :: 400  */
   font-family: 'Inter', sans-serif; 
 }
+

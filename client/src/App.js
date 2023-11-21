@@ -15,6 +15,7 @@ import Paper from '../src/Paper.png'
 import { HomePage } from './pages/HomePage';
 import { FixedFooter } from './components/FixedFooter';
 import { ModalProvider } from './hooks/useContext/ModalContext';
+import { Test } from './pages/Test';
 
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route path='/feedpage' element={<FeedPage/>}/>
           <Route path='/aboutus' element={<AboutUs/>}/>
           <Route path='/contactus' element={<ContactUs/>}/>
+          <Route path='/test' element={<Test/>}/>
         </Routes>
         <FixedFooter />
       <Footer />
