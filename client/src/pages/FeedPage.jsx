@@ -34,6 +34,7 @@ import Modal from "react-modal";
 // import { CardFound } from "./CardFound";
 import { DeliveryAlertFound } from '../components/DeliveryAlertFound';
 import { ConfirmContact } from '../components/uiPrimitives/ConfirmContact';
+import Payment from '../components/Payment';
 Modal.setAppElement(document.getElementById("root"));
 
 
@@ -42,13 +43,25 @@ Modal.setAppElement(document.getElementById("root"));
 export const FeedPage = ({ isOpen, onRequestClose }) => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const { modalIsOpen, openModal, closeModal } = useModal();
+  const { modalIsOpen, openModal } = useModal();
   const [dataFromFirstAPI, setDataFromFirstAPI] = useState([]);
   const [dataFromSecondAPI, setDataFromSecondAPI] = useState([]);
   const [isUserSignedIn, setIsUserSignedIn] = useState(true);
   const [combinedData, setCombinedData] = useState([]);
 
-  
+  const [confirmContactIsOpen, setConfirmContactIsOpen] = useState(false);
+  const [paymentIsOpen, setPaymentIsOpen] = useState(false);
+
+  const openConfirmContact = () => {
+    setConfirmContactIsOpen(true);
+  };
+  const openPayment = () => {
+    setPaymentIsOpen(true);
+  };
+  const closeModal = () => {
+    setConfirmContactIsOpen(false);
+    setPaymentIsOpen(false);
+  };
 
   useEffect(() => {
     // GET data from LOSTS
@@ -188,11 +201,11 @@ export const FeedPage = ({ isOpen, onRequestClose }) => {
               </div>
 
               <div className="flex flex-row gap-[4.75rem] items-center">
-              <button onClick={openModal}>
+              <button onClick={openConfirmContact}>
                       <FoundItBtn />
                     </button>
                     <ConfirmContact
-                      isOpen={modalIsOpen }
+                      isOpen={confirmContactIsOpen }
                       onRequestClose={closeModal}
                     />
                 <div className="pl-8">
@@ -257,7 +270,13 @@ export const FeedPage = ({ isOpen, onRequestClose }) => {
         </div>
 
         <div className="flex flex-row gap-[4.75rem] items-center">
-          <MineBtn />
+                        <button onClick={openPayment}>
+                        <MineBtn />
+                    </button>
+                    <Payment 
+                      isOpen={paymentIsOpen }
+                      onRequestClose={closeModal}
+                    />
           <div className="pl-8">
             <Share />
           </div>

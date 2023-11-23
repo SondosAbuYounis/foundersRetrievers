@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import {Cancel,
   AlertRed,
@@ -13,7 +13,16 @@ import { DeliveryAlertFound } from "../DeliveryAlertFound"
 Modal.setAppElement(document.getElementById("root"));
 
 export const ConfirmContact = ({ isOpen, onRequestClose }) => {
-    const { modalIsOpen, openModal, closeModal } = useModal();
+    const { modalIsOpen, openModal } = useModal();
+
+    const [deliveryAlertIsOpen, setDeliveryAlertIsOpen] = useState(false);
+
+    const openDeliveryAlert = () => {
+        setDeliveryAlertIsOpen(true);
+    };
+    const closeModal = () => {
+        setDeliveryAlertIsOpen(false);
+    };
 
   const modalStyle = {
     overlay: {
@@ -56,12 +65,12 @@ export const ConfirmContact = ({ isOpen, onRequestClose }) => {
           <button
             type="submit"
             className="mt-8 self-center text-center w-48 px-3 pb-2 text-[#fff] bg-transparent border border-1 border-[#fff] font-light focus:outline-none hover:bg-[#ffffff] hover:text-[#373737]  rounded-lg text-[1rem] px-5 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-            onClick={openModal}
+            onClick={openDeliveryAlert}
           >
             Submit Contact Form
           </button>
           <DeliveryAlertFound
-            isOpen={modalIsOpen}
+            isOpen={deliveryAlertIsOpen}
             onRequestClose={closeModal}
           />
         </div>
