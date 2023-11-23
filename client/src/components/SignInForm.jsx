@@ -102,7 +102,7 @@ const SingIn = () => {
       
 
     // Send the form data to the server for authentication
-    axios.post('/api/login', formData)
+    axios.post('http://localhost:3000/users', formData)
       .then((response) => {
         // add navigation and successfully signed in 
       })

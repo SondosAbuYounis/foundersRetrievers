@@ -1,6 +1,6 @@
 import React from 'react'
 import { Edit } from '../assets/icons/IconsSVGConst'
-import { MainCardFound } from '../components/MainCardFound'
+import { MainCardFound } from "../components/MainCardFound";
 
 export const ProfilePage = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });

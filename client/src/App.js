@@ -16,6 +16,7 @@ import { HomePage } from './pages/HomePage';
 import { FixedFooter } from './components/FixedFooter';
 import { ModalProvider } from './hooks/useContext/ModalContext';
 import { Test } from './pages/Test';
+import { MainCardFound } from './components/MainCardFound';
 
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route path='/aboutus' element={<AboutUs/>}/>
           <Route path='/contactus' element={<ContactUs/>}/>
           <Route path='/test' element={<Test/>}/>
+          <Route path='/found/:id' element={<MainCardFound />}/>
         </Routes>
         <FixedFooter />
       <Footer />
