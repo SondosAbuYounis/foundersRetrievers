@@ -17,7 +17,7 @@ export const PublishFound = ({ isOpen, onRequestClose }) => {
         },
       };
   // Input border style
-  const inputBorderStyle = {
+  const inputBorderStyle = { 
     background: "transparent",
     border: "none",
     borderBottom: "1px solid #CDCDCD84",

@@ -97,10 +97,13 @@ export const FixedFooter = (isOpen, onRequestClose) => {
             BELONGINGS <BurgurList />{" "}
           </div>
           {isClicked && (
-            <div className="absolute bottom-[4.2rem] left-20 -inset-20 bg-[#4E4E4E] w-[30rem] rounded-[0.55rem] text-[#fff] text-center text-[0.75rem]">
+            <div className={`${
+              showFooter ? "absolute" : ""
+            } bottom-[4.2rem] left-20 111-inset-20 bg-[#4E4E4E] w-[30rem] rounded-[0.55rem] text-[#fff] text-center text-[0.75rem]`}>
               {/* Add your list items here */}
               <ul className=" w-[29rem] bg-[#222222] rounded-[0.55rem] m-2">
                 <Link to='/feedpage'><li>Feed Page</li></Link>
+                <Link to='/profilepage'><li>Profile Page</li></Link>
                 <li>Item 2</li>
                 <li>Item 3</li>
               </ul>

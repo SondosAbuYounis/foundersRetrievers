@@ -22,7 +22,7 @@ export const Footer = () => {
                       <img src={Logo} className="h-12 mr-7 ml-6" alt="Flowbite Logo" />
                     </Link>
                 <li>
-                    <Link to='/' className="text-[0.8rem] font-bold  mr-4 hover:underline md:mr-6">CONTACT US</Link>
+                    <Link to='/contactus' className="text-[0.8rem] font-bold  mr-4 hover:underline md:mr-6">CONTACT US</Link>
                 </li>
                 <li>
                     <Link to='/' className="text-[0.8rem] font-bold  mr-4 hover:underline md:mr-6 ">HELP CENTER</Link>
