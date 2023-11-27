@@ -288,19 +288,19 @@ export const BurgurList = () => {
     >
       <path
         d="M1 1H26.02"
-        stroke="white"
+        stroke="#000"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       <path
         d="M5 7L26 7"
-        stroke="white"
+        stroke="#000"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       <path
         d="M1 12H26.02"
-        stroke="white"
+        stroke="#000"
         strokeWidth="1.5"
         strokeLinecap="round"
       />

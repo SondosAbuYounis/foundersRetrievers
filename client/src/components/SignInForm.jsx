@@ -104,6 +104,7 @@ const SingIn = () => {
     // Send the form data to the server for authentication
     axios.post('http://localhost:3000/users', formData)
       .then((response) => {
+        // login(response.data.token)
         // add navigation and successfully signed in 
       })
       .catch((error) => {
